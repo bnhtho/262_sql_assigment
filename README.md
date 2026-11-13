@@ -5,16 +5,19 @@ Bài tập lớn môn Database SQL. Backend sử dụng FastAPI, database dự k
 ## 1. Cấu trúc thư mục
 
 ```text
-262_sql_assigment/
-├── app/                    # Mã nguồn FastAPI
-├── database/
-│   └── sqlserver/
-│       ├── schema/         # Script tạo bảng
-│       ├── procedures/     # Stored procedures
-│       └── triggers/       # Triggers
-├── docs/                   # Tài liệu dự án
-├── requirements.txt        # Python dependencies
-└── docker-compose.yml      # Cấu hình Docker
+.
+|-- README.md
+|-- app
+|   |-- backend
+|   `-- frontend
+|-- database
+|   `-- sqlserver
+|       |-- procedures
+|       |-- schema
+|       `-- triggers
+|-- docker-compose.yml
+|-- docs
+`-- requirements.txt
 ```
 
 ## 2. Clone repository và vào thư mục
@@ -43,10 +46,10 @@ source .venv/bin/activate
 .\.venv\Scripts\Activate.ps1
 ```
 
-Cài FastAPI và Uvicorn:
+Cài FastAPI và Uvicorn Standard từ `requirements.txt`:
 
 ```bash
-uv pip install fastapi "uvicorn[standard]"
+uv pip install -r requirements.txt
 ```
 
 ## 4. Chạy ứng dụng
