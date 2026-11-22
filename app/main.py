@@ -8,6 +8,8 @@ from fastapi.templating import Jinja2Templates
 from dotenv import load_dotenv
 from starlette.middleware.sessions import SessionMiddleware
 
+from app.backend.routers.read_reports import router as read_reports_router
+
 project_root = Path(__file__).resolve().parent.parent
 load_dotenv(project_root / ".env")
 
@@ -26,6 +28,7 @@ app.add_middleware(
     same_site="lax",
     https_only=os.getenv("COOKIE_HTTPS_ONLY", "false").lower() == "true",
 )
+app.include_router(read_reports_router)
 
 templates = Jinja2Templates(
     directory=str(Path(__file__).parent / "frontend" / "templates")
